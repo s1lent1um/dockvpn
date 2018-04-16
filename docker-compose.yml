@@ -1,0 +1,12 @@
+version: "3"
+services:
+  dockvpn:
+    build: .
+    container_name: dockvpn
+    hostname: dockvpn
+    privileged: true
+    ports:
+      - "1194:1194/udp"
+      - "1443:443/tcp"
+    volumes:
+      - ./vpn-data/:/etc/openvpn
